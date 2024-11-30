@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.ao.frequencyapptest"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.ao.frequencyapptest"
