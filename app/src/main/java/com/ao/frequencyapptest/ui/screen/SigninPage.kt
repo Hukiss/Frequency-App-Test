@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -42,34 +43,22 @@ fun SigninPage() {
                 fontSize = 50.sp
             )
             Spacer(modifier = Modifier.height(20.dp))
-            TextField(
+            OutlinedTextField(
                 value = name,
                 onValueChange = { name = it },
                 label = { Text(text = "Nome") },
-                colors = TextFieldDefaults.textFieldColors(
-                    focusedIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent
-                )
             )
             Spacer(modifier = Modifier.height(20.dp))
-            TextField(
+            OutlinedTextField(
                 value = email,
                 onValueChange = { email = it },
                 label = { Text(text = "Email") },
-                colors = TextFieldDefaults.textFieldColors(
-                    focusedIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent
-                )
             )
             Spacer(modifier = Modifier.height(20.dp))
-            TextField(
+            OutlinedTextField(
                 value = senha,
                 onValueChange = { senha = it },
                 label = { Text(text = "Senha") },
-                colors = TextFieldDefaults.textFieldColors(
-                    focusedIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent
-                )
             )
             Spacer(modifier = Modifier.height(20.dp))
             Button(

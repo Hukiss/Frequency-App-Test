@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -33,7 +34,7 @@ import androidx.compose.ui.unit.sp
 fun LoginPage() {
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = Color(0xFFFED9B7)
+        //color = Color(0xFFFED9B7)
     ) {
         Column(
             modifier = Modifier,
@@ -48,24 +49,16 @@ fun LoginPage() {
                 fontWeight = FontWeight.Black
             )
             Spacer(modifier = Modifier.height(20.dp))
-            TextField(
+            OutlinedTextField(
                 value = email,
                 onValueChange = { email = it },
                 label = { Text(text = "Email") },
-                colors = TextFieldDefaults.textFieldColors(
-                    focusedIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent
-                )
             )
             Spacer(modifier = Modifier.height(20.dp))
-            TextField(
+            OutlinedTextField(
                 value = senha,
                 onValueChange = { senha = it },
                 label = { Text(text = "Senha") },
-                colors = TextFieldDefaults.textFieldColors(
-                    focusedIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent
-                )
             )
             Spacer(modifier = Modifier.height(20.dp))
             Row(
@@ -80,7 +73,8 @@ fun LoginPage() {
             }
             Spacer(modifier = Modifier.height(20.dp))
             Button(
-                onClick = {}
+                onClick = {},
+                modifier = Modifier
             ) {
                 Text(text = "Entrar")
             }

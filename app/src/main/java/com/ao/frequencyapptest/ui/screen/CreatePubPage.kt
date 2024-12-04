@@ -22,8 +22,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -37,6 +39,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier.Companion
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -47,49 +50,68 @@ fun CreatePubPage() {
 
     var description by remember { mutableStateOf("") }
 
+
+    Row(
+        modifier = Modifier,
+        horizontalArrangement = Arrangement.Start,
+        verticalAlignment = Alignment.Top
+    ) {
+        Button(
+            onClick = {},
+            colors = ButtonDefaults.buttonColors(Color.Transparent),
+            modifier = Modifier,
+        ) {
+            Icon(
+                imageVector = Icons.Default.ArrowBack,
+                contentDescription = "Retorna para a página anterior",
+                tint = Color.Black
+            )
+        }
+    }
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Row {
-            Button(
-                onClick = {},
-                colors = ButtonDefaults.buttonColors(Color.Transparent),
-            ) {
-                Icon(
-                    imageVector = Icons.Default.ArrowBack,
-                    contentDescription = "Retorna para a página anterior",
-                    tint = Color.Black
-                )
-            }
-        }
+        var url by remember { mutableStateOf("") }
 
         // begin: Essa area serve para poder adicionar uma imagem a nosso banco de dados
-
+        OutlinedTextField(
+            value = url,
+            onValueChange = { url = it },
+            label = {
+                Text(
+                    text = "Url"
+                )
+            },
+            modifier = Modifier
+                .width(370.dp),
+        )
         // end
 
-        TextField(
+        Spacer(modifier = Modifier.height(12.dp))
+
+        OutlinedTextField(
             value = description,
             onValueChange = { description = it },
             label = {
                 Text(text = "Descrição")
             },
             modifier = Modifier
-                .height(300.dp)
+                .height(400.dp)
                 .width(370.dp),
-            colors = TextFieldDefaults.textFieldColors(
-                unfocusedIndicatorColor = Color.Transparent,
-                disabledIndicatorColor = Color.Transparent
-            )
         )
         Spacer(modifier = Modifier.height(12.dp))
-        Button(
+        FloatingActionButton(
             onClick = {},
             modifier = Modifier,
             shape = RoundedCornerShape(5.dp)
         ) {
-            Text(text = "Guardar")
+            Text(
+                text = "Add",
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }
