@@ -1,9 +1,10 @@
-package com.ao.frequencyapptest.ui.screen
+package com.ao.frequencyapptest.ui.home
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -22,13 +23,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.ao.frequencyapptest.ui.componentes.ImageCard
+import com.ao.frequencyapptest.ui.component.ImageCard
 
 @Composable
 fun HomePage() {
 
-    Spacer(modifier = Modifier.height(40.dp))
-    Box() {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
         Column {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -47,11 +50,12 @@ fun HomePage() {
             )
 
             LazyColumn {
-                items(10) {
+                items(3) {
                     ImageCard()
                 }
             }
         }
+
         FloatingActionButton(
             onClick = {},
             modifier = Modifier
